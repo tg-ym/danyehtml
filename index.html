@@ -12,14 +12,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="shortcut icon" href="/asset/logo.png">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*"><!-- 允许跨域访问 -->
+  <meta name="referrer" content="never"> <!--发送referrer，突破403限制,绕过防盗链  -->
+<meta http-equiv="pragma" content="no-cache" /><meta http-equiv="expires" content="0" />    <!-- 不缓存网页 -->
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/tg-ym/danyehtml2/icon.png">
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/tg-ym/danyehtml/gh-pages/style.css?v=1690551075">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tg-ym/danyehtml2/style.css?v=1690551075">
 </head>
 <body class="article">
 <main id="main" class="wrapper">
     <div class="content">
-        <div class="page-title" title="TG影院"><img src="https://raw.githubusercontent.com/tg-ym/danyehtml/gh-pages/logo.png"></div>
+        <div class="page-title" title="TG影院"><img src="https://cdn.jsdelivr.net/gh/tg-ym/danyehtml2/logo.png"></div>
         <div class="box">
             <div class="article-content" style="margin-bottom: -50px;">
                 <h2 id="siteurl" style="margin-bottom: 60px;"><a href="#siteurl">TG影院发布页</a></h2>
@@ -88,7 +91,172 @@
     	arr=[];
     	setInterval("ping++", 1);
     </script>
-    <script src="https://raw.githubusercontent.com/tg-ym/danyehtml/gh-pages/main.js?v=1690551075"></script>
-    <i style="background-image: url(https://raw.githubusercontent.com/tg-ym/danyehtml/gh-pages/cute.gif);display: inline-block;width: 210px;height: 300px;position: fixed;bottom: 0;z-index: 110;background-size: 100%;"></i>
+    <script src="https://cdn.jsdelivr.net/gh/tg-ym/danyehtml2/main.js?v=1690551075"></script>
+    <i style="background-image: url(https://cdn.jsdelivr.net/gh/tg-ym/danyehtml2/cute.gif);display: inline-block;width: 210px;height: 300px;position: fixed;bottom: 0;z-index: 110;background-size: 100%;"></i>
+<script type="text/javascript">
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#3bcfcb"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<script type='text/javascript'>
+        const handler = setInterval(function () { console.clear(); const before = new Date(); debugger; const after = new Date(); const cost = after.getTime() - before.getTime(); if (cost > 100) { } }, 1);
+        //屏蔽右键菜单
+        document.oncontextmenu = function (event) {
+            if (window.event) {
+                event = window.event;
+            }
+            try {
+               var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+                }
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        //屏蔽粘贴
+        document.onpaste = function (event) {
+            if (window.event) {
+                event = window.event;
+            }
+             try {
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+                }
+                return true;
+           } catch (e) {
+                return false;
+            }
+        }
+        //屏蔽复制
+        //屏蔽剪切
+        document.oncut = function (event) {
+            if (window.event) {
+                event = window.event;
+            }
+            try {
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+               }
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        //禁止f12
+        function fuckyou() {
+            window.open("/", ""); // _blank 变量新窗口打开页面
+           window.close(); //关闭当前窗口(防抽)
+           window.location = "/404"; //将当前窗口跳转置空白页
+        }
+        //禁止Ctrl+U
+        var arr = [123, 17, 18];
+        document.oncontextmenu = new Function("event.returnValue=false;"), //禁用右键
+            window.onkeydown = function (e) {
+                var keyCode = e.keyCode || e.which || e.charCode;
+                var ctrlKey = e.ctrlKey || e.metaKey;
+                console.log(keyCode + "--" + keyCode);
+                if (ctrlKey && keyCode == 85) {
+                    e.preventDefault();
+                }
+                if (arr.indexOf(keyCode) > -1) {
+                    e.preventDefault();
+                }
+            }
+        function ck() {
+            console.profile();
+           console.profileEnd();
+            //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+            if (console.clear) {
+                console.clear()
+           };
+            if (typeof console.profiles == "object") {
+                return console.profiles.length > 0;
+           }
+        }
+        function hehe() {
+           if ((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (
+                typeof opera ==
+                'object' && typeof opera.postError == 'function' && console.profile.length > 0)) {
+               fuckyou();
+            }
+            if (typeof console.profiles == "object" && console.profiles.length > 0) {
+                fuckyou();
+            }
+        }
+        hehe();
+        window.onresize = function () {
+            if ((window.outerHeight - window.innerHeight) > 100)
+                //判断当前窗口内页高度和窗口高度，如果差值大于100，那么呵呵
+                fuckyou();
+        }
+        document.onkeydown = function (event) {
+            if ((event.keyCode == 112) || //屏蔽 F1
+                (event.keyCode == 113) || //屏蔽 F2
+                (event.keyCode == 114) || //屏蔽 F3
+                (event.keyCode == 115) || //屏蔽 F4
+                // (event.keyCode == 116) || //屏蔽 F5
+                (event.keyCode == 117) || //屏蔽 F6
+                (event.keyCode == 118) || //屏蔽 F7
+                (event.keyCode == 119) || //屏蔽 F8
+                (event.keyCode == 120) || //屏蔽 F9
+                (event.keyCode == 121) || //屏蔽 F10
+                (event.keyCode == 122) || //屏蔽 F11
+                (event.keyCode == 123)) //屏蔽 F12
+            {
+                return false;
+            }
+        }
+        window.onhelp = function () {
+           return false;
+        }
+    </script>
+<script>
+ function is_neizhi() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return "weixin";
+    } else if (ua.match(/QQ/i) == "qq") {
+        return "QQ";
+    } else if (ua.match(/Alipay/i) == "alipay") {
+        return "alipay";
+    }
+    return false;
+}
+var isNeizhi = is_neizhi();  //调用上面js判断
+var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;  //网页可视区高度
+var weixinTip = $('<div class="wxtip" id="JweixinTip" ><span class="wxtip-icon"></span><p class="wxtip-txt" id="wxtip-txt">请点击右上角<br>选择在浏览器中打开</p></div>');
+if(isNeizhi){
+  $("body").append(weixinTip);
+}
+</script>
+
 </body>
 </html>
